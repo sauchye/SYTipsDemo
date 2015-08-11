@@ -1,37 +1,33 @@
 //
-//  SYFirstViewController.m
+//  SYDetailViewController.m
 //  SYTipsDemo
 //
-//  Created by Sauchye on 8/11/15.
+//  Created by Sauchye on 8/12/15.
 //  Copyright (c) 2015 com.sauchye. All rights reserved.
 //
 
-#import "SYFirstViewController.h"
 #import "SYDetailViewController.h"
 #import "RDVTabBarController.h"
-
-@interface SYFirstViewController ()
+@interface SYDetailViewController ()
 
 @end
 
-@implementation SYFirstViewController
+@implementation SYDetailViewController
 
-#pragma MARK - life cicle
+#pragma mark - life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"FirstPage";
     
-    UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithTitle:@"PushNextVC" style:UIBarButtonItemStylePlain target:self action:@selector(pushAction)];
-    self.navigationItem.rightBarButtonItem = rightBtn;
+    self.title = @"Detail";
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [[self rdv_tabBarController] setTabBarHidden:YES animated:YES];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    [[self rdv_tabBarController] setTabBarHidden:NO animated:YES];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
@@ -42,14 +38,9 @@
     [super viewDidDisappear:animated];
 }
 
-
-- (void)pushAction{
-    SYDetailViewController *detailVC = [[SYDetailViewController alloc] init];
-    [self.navigationController pushViewController:detailVC animated:YES];
-}
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 /*

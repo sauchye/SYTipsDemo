@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ *  SYBaseNavigationController 基类导航控制器
+ */
 @interface SYBaseNavigationController : UINavigationController
 
 @end
