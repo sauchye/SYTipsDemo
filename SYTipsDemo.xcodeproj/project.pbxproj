@@ -9,11 +9,15 @@
 /* Begin PBXBuildFile section */
 		C51996831B7A4F7C0007FB90 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C51996821B7A4F7C0007FB90 /* main.m */; };
 		C51996861B7A4F7C0007FB90 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C51996851B7A4F7C0007FB90 /* AppDelegate.m */; };
-		C51996891B7A4F7C0007FB90 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C51996881B7A4F7C0007FB90 /* ViewController.m */; };
 		C519968C1B7A4F7C0007FB90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C519968A1B7A4F7C0007FB90 /* Main.storyboard */; };
 		C519968E1B7A4F7C0007FB90 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C519968D1B7A4F7C0007FB90 /* Images.xcassets */; };
 		C51996911B7A4F7D0007FB90 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C519968F1B7A4F7D0007FB90 /* LaunchScreen.xib */; };
 		C519969D1B7A4F7D0007FB90 /* SYTipsDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C519969C1B7A4F7D0007FB90 /* SYTipsDemoTests.m */; };
+		C51996AA1B7A4FF10007FB90 /* SYBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = C51996A91B7A4FF10007FB90 /* SYBaseNavigationController.m */; };
+		C51996AD1B7A50050007FB90 /* SYBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C51996AC1B7A50050007FB90 /* SYBaseViewController.m */; };
+		C51996B01B7A50240007FB90 /* SYFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C51996AF1B7A50240007FB90 /* SYFirstViewController.m */; };
+		C51996B31B7A502F0007FB90 /* SYSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C51996B21B7A502F0007FB90 /* SYSecondViewController.m */; };
+		C51996B61B7A50380007FB90 /* SYThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C51996B51B7A50380007FB90 /* SYThirdViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +36,22 @@
 		C51996821B7A4F7C0007FB90 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C51996841B7A4F7C0007FB90 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C51996851B7A4F7C0007FB90 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C51996871B7A4F7C0007FB90 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C51996881B7A4F7C0007FB90 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C519968B1B7A4F7C0007FB90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C519968D1B7A4F7C0007FB90 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C51996901B7A4F7D0007FB90 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C51996961B7A4F7D0007FB90 /* SYTipsDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SYTipsDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C519969B1B7A4F7D0007FB90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C519969C1B7A4F7D0007FB90 /* SYTipsDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SYTipsDemoTests.m; sourceTree = "<group>"; };
+		C51996A81B7A4FF10007FB90 /* SYBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYBaseNavigationController.h; sourceTree = "<group>"; };
+		C51996A91B7A4FF10007FB90 /* SYBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYBaseNavigationController.m; sourceTree = "<group>"; };
+		C51996AB1B7A50050007FB90 /* SYBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYBaseViewController.h; sourceTree = "<group>"; };
+		C51996AC1B7A50050007FB90 /* SYBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYBaseViewController.m; sourceTree = "<group>"; };
+		C51996AE1B7A50240007FB90 /* SYFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYFirstViewController.h; sourceTree = "<group>"; };
+		C51996AF1B7A50240007FB90 /* SYFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYFirstViewController.m; sourceTree = "<group>"; };
+		C51996B11B7A502F0007FB90 /* SYSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYSecondViewController.h; sourceTree = "<group>"; };
+		C51996B21B7A502F0007FB90 /* SYSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYSecondViewController.m; sourceTree = "<group>"; };
+		C51996B41B7A50380007FB90 /* SYThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYThirdViewController.h; sourceTree = "<group>"; };
+		C51996B51B7A50380007FB90 /* SYThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYThirdViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,10 +93,10 @@
 		C519967F1B7A4F7C0007FB90 /* SYTipsDemo */ = {
 			isa = PBXGroup;
 			children = (
+				C51996A61B7A4FB20007FB90 /* Base */,
+				C51996A71B7A4FC50007FB90 /* Controllers */,
 				C51996841B7A4F7C0007FB90 /* AppDelegate.h */,
 				C51996851B7A4F7C0007FB90 /* AppDelegate.m */,
-				C51996871B7A4F7C0007FB90 /* ViewController.h */,
-				C51996881B7A4F7C0007FB90 /* ViewController.m */,
 				C519968A1B7A4F7C0007FB90 /* Main.storyboard */,
 				C519968D1B7A4F7C0007FB90 /* Images.xcassets */,
 				C519968F1B7A4F7D0007FB90 /* LaunchScreen.xib */,
@@ -117,6 +129,30 @@
 				C519969B1B7A4F7D0007FB90 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C51996A61B7A4FB20007FB90 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				C51996A81B7A4FF10007FB90 /* SYBaseNavigationController.h */,
+				C51996A91B7A4FF10007FB90 /* SYBaseNavigationController.m */,
+				C51996AB1B7A50050007FB90 /* SYBaseViewController.h */,
+				C51996AC1B7A50050007FB90 /* SYBaseViewController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		C51996A71B7A4FC50007FB90 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C51996AE1B7A50240007FB90 /* SYFirstViewController.h */,
+				C51996AF1B7A50240007FB90 /* SYFirstViewController.m */,
+				C51996B11B7A502F0007FB90 /* SYSecondViewController.h */,
+				C51996B21B7A502F0007FB90 /* SYSecondViewController.m */,
+				C51996B41B7A50380007FB90 /* SYThirdViewController.h */,
+				C51996B51B7A50380007FB90 /* SYThirdViewController.m */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +199,7 @@
 		C51996751B7A4F7C0007FB90 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = SY;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = com.sauchye;
 				TargetAttributes = {
@@ -219,9 +256,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C51996891B7A4F7C0007FB90 /* ViewController.m in Sources */,
 				C51996861B7A4F7C0007FB90 /* AppDelegate.m in Sources */,
 				C51996831B7A4F7C0007FB90 /* main.m in Sources */,
+				C51996AA1B7A4FF10007FB90 /* SYBaseNavigationController.m in Sources */,
+				C51996AD1B7A50050007FB90 /* SYBaseViewController.m in Sources */,
+				C51996B31B7A502F0007FB90 /* SYSecondViewController.m in Sources */,
+				C51996B01B7A50240007FB90 /* SYFirstViewController.m in Sources */,
+				C51996B61B7A50380007FB90 /* SYThirdViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

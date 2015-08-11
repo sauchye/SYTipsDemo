@@ -1,15 +1,13 @@
 //
-//  ViewController.h
+//  SYFirstViewController.h
 //  SYTipsDemo
 //
 //  Created by Sauchye on 8/11/15.
 //  Copyright (c) 2015 com.sauchye. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "SYBaseViewController.h"
 
-@interface ViewController : UIViewController
-
+@interface SYFirstViewController : SYBaseViewController
 
 @end
-
