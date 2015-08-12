@@ -6,8 +6,6 @@
 //  Copyright (c) 2015 com.sauchye. All rights reserved.
 //
 
-#import "RDVTabBarItem.h"
-#import "RDVTabBarController.h"
 #import "SYBaseNavigationController.h"
 #import "SYFirstViewController.h"
 #import "SYSecondViewController.h"

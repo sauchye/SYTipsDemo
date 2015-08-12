@@ -7,9 +7,6 @@
 //
 
 #import "SYRootViewController.h"
-#define VString(x)      NSLocalizedString(x, nil) //IOS8里String已经作为字符串类
-#define RGB(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
-#define kNAVIGATION_BAR_COLOR [UIColor colorWithRed:20/255.0 green:155/255.0 blue:213/255.0 alpha:1.0]
 
 
 @interface SYRootViewController ()
@@ -38,9 +35,8 @@
 
 - (void)customizeTabBarForController{
     
-    //tabbar 背景图片
-    UIImage *backgroundImage = [UIImage imageNamed:@"tabbar_background"];
-    
+    //tabbar 背景图片 tabbar_background
+    UIImage *backgroundImage = [UIImage imageNamed:@""];
     //选项卡图片
     NSArray *tabBarItemImages = @[VString(@"First"), VString(@"Second"),VString(@"Third")];
     
@@ -50,7 +46,6 @@
     {
         item.titlePositionAdjustment = UIOffsetMake(0, 2.0);
         [item setBackgroundSelectedImage:backgroundImage withUnselectedImage:backgroundImage];
-        
         UIImage *selectedimage = [UIImage imageNamed:[NSString stringWithFormat:@"%@_selected",[tabBarItemImages objectAtIndex:index]]];
         
         UIImage *unselectedimage = [UIImage imageNamed:[NSString stringWithFormat:@"%@_normal",[tabBarItemImages objectAtIndex:index]]];
@@ -64,7 +59,7 @@
                                          };
         item.unselectedTitleAttributes = @{
                                            NSFontAttributeName: [UIFont boldSystemFontOfSize:12],
-                                           NSForegroundColorAttributeName:RGB(217, 217, 217, 1),
+                                           NSForegroundColorAttributeName:RGB(217, 217, 217),
                                            };
         
         [item setTitle:[tabBarItemTitles objectAtIndex:index]];
