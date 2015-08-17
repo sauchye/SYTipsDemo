@@ -14,10 +14,20 @@
 
 @implementation SYThirdViewController
 
+#pragma mark - life cycle
+- (instancetype)init{
+    self = [super init];
+    
+    if (self) {
+        self.title = VString(@"ThirdPage");
+        [self showBackButton:NO];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = VString(@"ThirdPage");
 }
 
 - (void)didReceiveMemoryWarning {

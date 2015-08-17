@@ -8,10 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-/**
- *  SYBaseViewController 基类控制
- */
+/***  SYBaseViewController 基类控制*/
 @interface SYBaseViewController : UIViewController
+
+/**
+ *  是否显示返回按钮
+ *
+ *  @param isShow
+ */
+- (void)showBackButton:(BOOL)isShow;
 
 /**
  *  隐藏tableView 多余的线

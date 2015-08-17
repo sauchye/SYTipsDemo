@@ -15,15 +15,28 @@
 
 @implementation SYFirstViewController
 
-#pragma MARK - life cicle
+#pragma mark - life cycle
+- (instancetype)init{
+    self = [super init];
+    
+    if (self) {
+        self.title = VString(@"FirstPage");
+        [self showBackButton:NO];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = VString(@"FirstPage");
     
-    UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithTitle:@"PushNextVC" style:UIBarButtonItemStylePlain target:self action:@selector(pushAction)];
+    [self showBackButton:NO];
+    //设置角标
+    self.rdv_tabBarItem.badgeValue = VString(@"2");
+
+    UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithTitle:@"rightBtn" style:UIBarButtonItemStylePlain target:self action:@selector(rightAction)];
     self.navigationItem.rightBarButtonItem = rightBtn;
     
-    UIBarButtonItem *leftBtn = [[UIBarButtonItem alloc] initWithTitle:@"leftButton" style:UIBarButtonItemStylePlain target:self action:@selector(leftAction)];
+    UIBarButtonItem *leftBtn = [[UIBarButtonItem alloc] initWithTitle:@"leftBtn" style:UIBarButtonItemStylePlain target:self action:@selector(leftAction)];
     self.navigationItem.leftBarButtonItem = leftBtn;
 }
 
@@ -46,14 +59,14 @@
 
 
 #pragma mark - Button Action
-- (void)pushAction{
+- (void)rightAction{
     SYDetailViewController *detailVC = [[SYDetailViewController alloc] init];
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 - (void)leftAction{
-    SYHUDView *hud = [SYHUDView showTo:self.view.window hide:2.0];
-    hud.labelText = VString(@"Success");
+    SYHUDView *hud = [SYHUDView showTo:self.view hide:1.0];
+    hud.labelText = VString(@"leftBtn Clicked");
 }
 
 - (void)didReceiveMemoryWarning {

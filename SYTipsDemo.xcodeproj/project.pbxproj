@@ -288,8 +288,8 @@
 			isa = PBXGroup;
 			children = (
 				0206FEB81B7B4930009F2AA7 /* Resource */,
+				C5D5A6D61B82354700A24621 /* Vendor */,
 				0206FEA41B7B3E0C009F2AA7 /* Macro */,
-				C52DB1521B7A53FA003DF2F9 /* Vendors */,
 				C51996A61B7A4FB20007FB90 /* Base */,
 				0206FEAF1B7B4670009F2AA7 /* Models */,
 				0206FEAE1B7B4666009F2AA7 /* Views */,
@@ -358,11 +358,11 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		C52DB1521B7A53FA003DF2F9 /* Vendors */ = {
+		C5D5A6D61B82354700A24621 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Vendors;
+			path = Vendor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

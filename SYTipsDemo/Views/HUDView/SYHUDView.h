@@ -10,36 +10,58 @@
 /**
  *  SYHUDView 封装MBProgressHUD
  */
+
+//自定义图片 玩的不够6  如：成功图片+文字提示，您可以封装在此，多谢
+
 @interface SYHUDView : MBProgressHUD
 
 /**
  *
- *  纯文字提示
+ *  纯文字提示+中间显示
  *  @param view
  *
  *  @return hud
  */
 + (SYHUDView *)showTo:(UIView *)view hide:(NSTimeInterval)time;
 
+
 /**
- *  加载框+文字提示
+ *
+ *  纯文字提示+底部显示
+ *  @param view
+ *
+ *  @return hud
+ */
++ (SYHUDView *)showToBottomView:(UIView *)view hide:(NSTimeInterval)time;
+
+/**
+ *  菊花+文字提示+也可添加在Window上
  *
  *  @param view
  *
  *  @return hud
  */
-+ (SYHUDView *)showToProgressAndMessageTips:(UIView *)view;
++ (SYHUDView *)showToView:(UIView *)view;
 
 /**
- *  是否加载成功+文字提示
+ *  图片显示是否加载成功+文字提示
  *
  *  @param view
  *  @param message
  *
  *  @return hud
  */
-+ (SYHUDView *)showToLoadSuccess:(UIView *)view andShowMessage:(NSString *)message hide:(NSTimeInterval)time loadSuccess:(BOOL)isSuccess;
+//+ (SYHUDView *)showToLoadSuccess:(UIView *)view isloadSuccess:(BOOL)isSuccess;
 
+/**
+ *  自定义返回的图片+文字提示
+ *
+ *  @param view
+ *  @param image
+ *
+ *  @return hud
+ */
++ (SYHUDView *)showToLoadSuccess:(UIView *)view Image:(UIImage *)image;
 
 
 @end

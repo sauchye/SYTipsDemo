@@ -17,18 +17,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    //更改back显示
-//    UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@""] style:UIBarButtonItemStylePlain target:self action:@selector(clicked:)];
-//    temporaryBarButtonItem.title = @"返回";
-//    self.navigationItem.backBarButtonItem = temporaryBarButtonItem;
-    self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-
 }
 
-- (void)clicked:(UIButton *)sender{
-    
+- (void)showBackButton:(BOOL)isShow{
+    //系统返回按钮
+    //    UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@""] style:UIBarButtonItemStylePlain target:self action:@selector(backActionClicked:)];
+    //        temporaryBarButtonItem.title = @"返回";
+    //自定义返回按钮
+    if (isShow == YES) {
+        UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_back_icon"] style:UIBarButtonItemStylePlain target:self action:@selector(backClickedAction:)];
+        self.navigationItem.leftBarButtonItem = temporaryBarButtonItem;
+        self.view.backgroundColor = [UIColor whiteColor];
+        self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    }else{
+        return;
+    }
+}
+
+- (void)backClickedAction:(UIButton *)sender{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - isMobileNumber

@@ -14,10 +14,20 @@
 
 @implementation SYSecondViewController
 
+#pragma mark - life cycle
+- (instancetype)init{
+    self = [super init];
+    
+    if (self) {
+        self.title = VString(@"SecondPage");
+        [self showBackButton:NO];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = VString(@"SecondPage");
     
 }
 
