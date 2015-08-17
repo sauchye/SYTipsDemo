@@ -3,7 +3,8 @@
 //  SYTipsDemo
 //
 //  Created by Sauchye on 8/11/15.
-//  Copyright (c) 2015 com.sauchye. All rights reserved.
+//  Copyright (c) 2015 sauchye.com. All rights reserved.
+//  https://github.com/sauchye/SYTipsDemo
 //
 
 #import "SYBaseViewController.h"
@@ -15,6 +16,14 @@
 
 @implementation SYBaseViewController
 
+#pragma mark - life cycle
+- (instancetype)init{
+    self = [super init];
+    if (self) {
+        self.view.backgroundColor = [UIColor whiteColor];
+    }
+    return self;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
@@ -35,6 +44,7 @@
 }
 
 - (void)backClickedAction:(UIButton *)sender{
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -119,6 +129,19 @@
     }else{
         return 44.0f;
     }
+}
+
+
+- (NSString *)trimWhitespace
+{
+    NSMutableString *str = [self mutableCopy];
+    CFStringTrimWhitespace((__bridge CFMutableStringRef)str);
+    return str;
+}
+
+- (BOOL)isEmptyString:(NSString *)string
+{
+    return [[self trimWhitespace] isEqualToString:@""];
 }
 
 

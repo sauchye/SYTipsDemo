@@ -3,7 +3,8 @@
 //  SYTipsDemo
 //
 //  Created by Sauchye on 8/12/15.
-//  Copyright (c) 2015 com.sauchye. All rights reserved.
+//  Copyright (c) 2015 sauchye.com. All rights reserved.
+//  https://github.com/sauchye/SYTipsDemo
 //
 
 #ifndef SYTipsDemo_SYDefineHeader_h
@@ -13,8 +14,6 @@
 
 //系统相关
 #define kCheckAppLastestVersion @"checkAppLastestVersion"
-//默认设置版本号
-#define kUploadAppVersion @"1100"
 //app的版本号
 #define kAppVersion [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
 

@@ -3,10 +3,12 @@
 //  SYTipsDemo
 //
 //  Created by Sauchye on 8/11/15.
-//  Copyright (c) 2015 com.sauchye. All rights reserved.
+//  Copyright (c) 2015 sauchye.com. All rights reserved.
+//  https://github.com/sauchye/SYTipsDemo
 //
 
 #import "SYThirdViewController.h"
+#import "SYLoginViewController.h"
 
 @interface SYThirdViewController ()
 
@@ -27,8 +29,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    UIBarButtonItem *registerBtn = [[UIBarButtonItem alloc] initWithTitle:VString(@"Login") style:UIBarButtonItemStylePlain target:self action:@selector(registerBtnClicked:)];
+    self.navigationItem.rightBarButtonItem = registerBtn;
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+
 }
+
+- (void)registerBtnClicked:(UIButton *)sender{
+    
+    SYLoginViewController *loginVC = [[SYLoginViewController alloc] init];
+    SYBaseNavigationController *nav = [[SYBaseNavigationController alloc] initWithRootViewController:loginVC];
+    [self presentViewController:nav animated:YES completion:nil];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

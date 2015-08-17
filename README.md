@@ -1,15 +1,19 @@
-###About SYTipsDemo
+### About SYTipsDemo
 
-a lot of iOS Tips
+a lot of iOS Project Tips
 
 
-###TODO
+
+### TODO
+
 you can gain a little useful skill
 
-###Expection
+### Expection
+
 a skill and and more and more you can get(such as a project style...)
 
-###Libraries
+### Libraries
+
 <a href="https://github.com/robbdimitrov/RDVTabBarController">RDVTabBarController</a>
 
 <a href="https://github.com/SnapKit/Masonry">Masonry</a>
@@ -17,16 +21,20 @@ a skill and and more and more you can get(such as a project style...)
 <a href="https://github.com/jdg/MBProgressHUD">MBProgressHUD</a>
 
 
-<a href="https://github.com/AFNetworking/AFNetworking">AFNetworking</a>
+
+<a href="https://github.com/ReactiveCocoa/ReactiveCocoa">ReactiveCocoa</a>
 
 <a href="https://github.com/TTTAttributedLabel/TTTAttributedLabel">TTTAttributedLabel</a>
 
-<a href="https://github.com/michaeltyson/TPKeyboardAvoiding">TPKeyboardAvoiding</a>
+<a href="https://github.com/michaeltyson/TPKeyboardAvoiding">TPKeyboardAvoiding</a></br>
+
+<a href="https://github.com/jaydee3/JDStatusBarNotification">JDStatusBarNotification</a>
 
 
-###License
+
+### License
+
 SYTipsDemo is licensed under the MIT License.
-
 
 
 

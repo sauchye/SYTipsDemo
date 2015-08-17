@@ -18,8 +18,11 @@
 #import "SYHUDView.h"
 
 //Pods Framework
+#import "Masonry.h"
+#import "ReactiveCocoa.h"
 #import "RDVTabBarItem.h"
 #import "RDVTabBarController.h"
+#import "JDStatusBarNotification.h"
 
 
 #endif
