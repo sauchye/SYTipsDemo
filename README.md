@@ -6,81 +6,90 @@ a lot of iOS Project Tips
 
 ### TODO(you can gain a little useful skill)
 
-- setStatusBarStyle(设置状态栏) </br>
+- setStatusBarStyle(自定义状态栏) </br>
 
-在**AppDelegate**
+ ```
+ AppDelegat
+[[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
+		 
+[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
 
-   ``` [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];```
-    
-    在SYBaseNavigationController
-        导航相关设置 导航栏颜色设置
+SYBaseNavigationController
+
     [self.navigationBar setBarTintColor:[UIColor colorWithRed:20/255.0 green:155/255.0 blue:213/255.0 alpha:1.0]];
-    返回按钮颜色设置
-    self.navigationBar.tintColor = [UIColor whiteColor];
-   
-    navTitle字体颜色设置
-    [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
-    [self.navigationBar setTranslucent:NO];
     
+    self.navigationBar.tintColor = [UIColor whiteColor];
+    [self.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    [self.navigationBar setTranslucent:NO];    
+   ```  
     plist添加：
     1.View controller-based status bar appearance 设置为NO;
     2.Status bar is initially hidden 设置成YES
     详情:请参考SYTipsDemo
-    
-* set PanGestureRecognizer back(设置全屏手势右滑返回 ) 
+     ```
+* set PanGestureRecognizer back(设置全屏手势右滑返回) 
 
-   ```id target = self.interactivePopGestureRecognizer.delegate;
-    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:target action:@selector(handleNavigationTransition:)];
-    pan.delegate = self;
-    [self.view addGestureRecognizer:pan];
-    self.interactivePopGestureRecognizer.enabled = NO;```
+   ```objc
+   
+		- (void)setPan{
+
+   		 id target = self.interactivePopGestureRecognizer.delegate;    
+  		  UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:target action:@selector(handleNavigationTransition:)];
     
+  	  pan.delegate = self;
     
-    详情:<a href = "https://github.com/sauchye/SYTipsDemo/blob/master/SYTipsDemo/Base/SYBaseNavigationController.m">设置全屏手势右滑返回</a>
-    参考:<a href = "http://www.jianshu.com/p/bc85a3d37519">戳</a>
+  	  [self.view addGestureRecognizer:pan];
+  		self.interactivePopGestureRecognizer.enabled = NO;
+  	  }
+
+		- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer{
+  	 	 if (self.childViewControllers.count == 1) {
+  	     	 return NO;
+ 	 	    }
+  	 	 return YES;
+		}
+
+```    
+    
+   
+   详情:<a href = "https://github.com/sauchye/SYTipsDemo/blob/master/SYTipsDemo/Base/SYBaseNavigationController.m">设置全屏手势右滑返回</a>
+    	参考:<a href = "http://www.jianshu.com/p/bc85a3d37519">戳</a>
     
 * package MBProgrssHUD(封装MBProgressHUD，更易用)<br/>
 
-	```+ (SYHUDView *)showToView:(UIView *)view
-                     text:(NSString *)text
-                     hide:(NSTimeInterval)time;```
-
-	```+ (SYHUDView *)showToBottomView:(UIView *)view
-                           text:(NSString *)text
-                           hide:(NSTimeInterval)time;```
-
-
-	```+ (SYHUDView *)showToView:(UIView *)view
-                  success:(BOOL)isSuccess
-                     text:(NSString *)text
-                     hide:(NSTimeInterval)time;```
-
-	```+ (SYHUDView *)showToView:(UIView *)view
-              customImage:(UIImage *)image
-                     text:(NSString *)text
-                     hide:(NSTimeInterval)time;```
-
-	```+ (SYHUDView *)showToView:(UIView *)view;```
+	```objc
 	
-	Example:
+		+ (SYHUDView *)showToView:(UIView *)view text:(NSString *)text hide:(NSTimeInterval)time;
+
+		+ (SYHUDView *)showToBottomView:(UIView *)view text:(NSString *)text hide:(NSTimeInterval)time;
+       
+		+ (SYHUDView *)showToView:(UIView *)view success:(BOOL)isSuccess  text:(NSString *)text hide:(NSTimeInterval)time;
+
+		+ (SYHUDView *)showToView:(UIView *)view customImage:(UIImage *)image text:(NSString *)text hide:(NSTimeInterval)time;
+		
+		+ (SYHUDView *)showToView:(UIView *)view;
+		```
 	
-	 ```[SYHUDView showToView:self.view text:@"Success" hide:2.0];```
-	 
-    ```[SYHUDView showToView:self.view success:YES text:@"Success" hide:2.0];```
+	Example, easy use:
+	
+	 ``` objc
+	 	
+	 	[SYHUDView showToView:self.view text:@"Success" hide:2.0];
+	
+		[SYHUDView showToView:self.view success:YES text:@"Success" hide:2.0];
     
-    ``` [SYHUDView showToBottomView:self.view text:@"bottom Success" hide:2.0];```
+    	[SYHUDView showToBottomView:self.view text:@"bottom Success" hide:2.0];
     
-    ```[SYHUDView showToView:self.view customImage:[UIImage imageNamed:@"nav_back_icon"] text:@"customImage" hide:2.0];```
+    	[SYHUDView showToView:self.view customImage:[UIImage imageNamed:@"nav_back_icon"] text:@"customImage" hide:2.0];
     
+    	SYHUDView *hud = [SYHUDView showToView:self.view];
     
-    ```SYHUDView *hud = [SYHUDView showToView:self.view];```
-    
-    ``` [hud hide:YES afterDelay:2.0];```
+    	[hud hide:YES afterDelay:2.0]; 
+    	```
 
     And has many not finished...
 
-* welcome to pull request or issues.
+* welcome to star, fork, pull request or issues.
 
 
 
