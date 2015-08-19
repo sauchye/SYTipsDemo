@@ -9,6 +9,9 @@
 
 #import "SYHUDView.h"
 
+@interface SYHUDView ()
+
+@end
 @implementation SYHUDView
 
 #define kHudDetailFontSize 14.0
@@ -19,9 +22,10 @@
 
 
 //中间纯文字提示
-+ (SYHUDView *)showTo:(UIView *)view hide:(NSTimeInterval)time{
++ (SYHUDView *)showToView:(UIView *)view text:(NSString *)text hide:(NSTimeInterval)time{
     SYHUDView *hud = [SYHUDView showHUDAddedTo:view animated:YES];
     hud.labelFont = kHudFont(kHudDetailFontSize);
+    hud.labelText = text;
     hud.mode = MBProgressHUDModeText;
     hud.margin = 10.0f;
     hud.removeFromSuperViewOnHide = YES;
@@ -31,9 +35,10 @@
 }
 
 //底部纯文字提示
-+ (SYHUDView *)showToBottomView:(UIView *)view hide:(NSTimeInterval)time{
++ (SYHUDView *)showToBottomView:(UIView *)view text:(NSString *)text hide:(NSTimeInterval)time{
     SYHUDView *hud = [SYHUDView showHUDAddedTo:view animated:YES];
     hud.labelFont = kHudFont(kHudDetailFontSize);
+    hud.labelText = text;
     hud.mode = MBProgressHUDModeText;
     hud.margin = 10.0f;
     CGFloat bottomSpaceY = 0.0;
@@ -52,6 +57,60 @@
 }
 
 
+//图片显示是否加载成功+文字提示
++ (SYHUDView *)showToView:(UIView *)view
+                  success:(BOOL)isSuccess
+                     text:(NSString *)text
+                     hide:(NSTimeInterval)time{
+    
+    SYHUDView *hud = [[SYHUDView alloc] initWithView:view];
+    [view addSubview:hud];
+    hud.animationType = MBProgressHUDAnimationZoom;
+    hud.mode = MBProgressHUDModeCustomView;
+    hud.labelText = text;
+    hud.labelFont = kHudFont(kHudFontSize);
+    if (isSuccess) {
+        hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hub_success"]];
+    }else{
+        hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hub_error"]];
+        
+    }
+    [hud showAnimated:YES whileExecutingBlock:^{
+        sleep(time);
+    } completionBlock:^{
+        [hud removeFromSuperview];
+    }];
+    return hud;
+}
+
+//自定义图片显示+文字提示
++ (SYHUDView *)showToView:(UIView *)view
+              customImage:(UIImage *)image
+                     text:(NSString *)text
+                     hide:(NSTimeInterval)time{
+    
+    SYHUDView *hud = [[SYHUDView alloc] initWithView:view];
+    [view addSubview:hud];
+    hud.mode = MBProgressHUDModeCustomView;
+    hud.animationType = MBProgressHUDAnimationZoom;
+    hud.customView = [[UIImageView alloc] initWithImage:image];
+    hud.labelFont = kHudFont(kHudFontSize);
+    hud.labelText = text;
+    
+    [hud showAnimated:YES whileExecutingBlock:^{
+        sleep(time);
+    } completionBlock:^{
+        [hud removeFromSuperview];
+    }];
+
+    return hud;
+}
+
+- (void)myTask {
+    // Do something usefull in here instead of sleeping ...
+    //    sleep(3);
+}
+
 //加载框+文字提示
 + (SYHUDView *)showToView:(UIView *)view{
     SYHUDView *hud = [SYHUDView showHUDAddedTo:view animated:YES];
@@ -61,91 +120,38 @@
     return hud;
 }
 
-//是否加载成功+文字提示
-+ (SYHUDView *)showToLoadSuccess:(UIView *)view isLoadSuccess:(BOOL)isSuccess{
-    SYHUDView *hud = [[SYHUDView alloc] initWithView:view];
-    [view addSubview:hud];
-    hud.mode = MBProgressHUDModeCustomView;
-    hud.animationType = MBProgressHUDAnimationZoom;
-    hud.labelFont = kHudFont(kHudFontSize);
-    hud.hidden = time;
-    if (isSuccess == YES) { //加载成功
-        hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hub_success"]];
-    }else{
-        hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hub_error"]];
-    }
-    return hud;
-}
 
-//自定义图片显示+文字提示
-+ (SYHUDView *)showToLoadSuccess:(UIView *)view Image:(UIImage *)image{
-    
-    SYHUDView *hud = [[SYHUDView alloc] initWithView:view];
-    [view addSubview:hud];
-    hud.mode = MBProgressHUDModeCustomView;
-    hud.animationType = MBProgressHUDAnimationZoom;
-    hud.customView = [[UIImageView alloc] initWithImage:image];
-    hud.labelFont = kHudFont(kHudFontSize);
-    hud.hidden = time;
-    return hud;
+/** 背景色更改+菊花加载 */
+//- (SYHUDView *)showToGradient:(UIView *)view{
+//    SYHUDView *hud = [[SYHUDView alloc] initWithView:view];
+//    [view addSubview:hud];
+//    hud.dimBackground = YES;
+//    
+////    [hud showWhileExecuting:@selector(myTask) onTarget:self withObject:nil animated:YES];
+//    return hud;
+//}
+
+
+
+#pragma mark - MBProgressHUDDelegate
+- (void)hudWasHidden:(MBProgressHUD *)hud {
+    // Remove HUD from screen when the HUD was hidded
 }
 
 
-//自定义图片 玩的不够6  如：成功图片+文字提示，您可以封装在此，多谢
-#if 0
-- (NSTimeInterval)delayTime:(NSString *)string{
-    if (string.length>25) { //大于40个字就返回2.5s
-        return 2.0;
-    }else if(string.length>40) { //大于40个字就返回2.6s
-        return 2.6;
-    }
-    return kSYHUDViewAnimationTime;
-}
+/** 加载实心圆形进度条+文字提示 */
+//+ (SYHUDView *)showToDeterminateView:(UIView *)view{
+//}
 
--  (void)setImage:(NSString *)imageName
-             text:(NSString *)text
-            delay:(CGFloat)time{
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:Image(imageName)];
-    self.customView = imageView;
-    self.mode = MBProgressHUDModeCustomView;
-    self.labelText = text;
-    self.labelFont = [UIFont systemFontOfSize:kHudFontSize];
-    self.detailsLabelFont = [UIFont systemFontOfSize:kHudDetailFontSize];
-    [self hide:YES afterDelay:time];
-}
+/** 加载空心圆形进度条+文字提示 */
+//+ (SYHUDView *)showToAnnularDeterminateView:(UIView *)view{
+//}
+//
 
--  (void)setImage:(NSString *)imageName
-             text:(NSString *)text
-           detail:(NSString *)detail
-            delay:(CGFloat)time{
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:Image(imageName)];
-    self.customView = imageView;
-    self.mode = MBProgressHUDModeCustomView;
-    self.labelText = text;
-    self.labelFont = [UIFont systemFontOfSize:kHudFontSize];
-    self.detailsLabelFont = [UIFont systemFontOfSize:kHudDetailFontSize];
-    self.detailsLabelText = detail;
-    [self hide:YES afterDelay:time];
-}
+///** 加载水平进度条 */
+//+ (SYHUDView *)showToDeterminateHorizontalBar:(UIView *)view{
+//}
+//
 
--  (void)setImage:(NSString *)imageName
-             text:(NSString *)text{
-    [self setImage:imageName text:text delay:[self delayTime:text]];
-}
-
--  (void)showSuccessedLabelText:(NSString *)text{
-    [self setImage:@"hub_success" text:text];
-}
-
--  (void)showFailurLabelText:(NSString *)text{
-    [self setImage:@"hub_error" text:text];
-}
-
--  (void)showFailurLabelText:(NSString *)text
-                      detail:(NSString *)detail{
-    [self setImage:@"hub_error" text:text detail:detail delay:[self delayTime:detail]];
-}
-
-#endif
 
 @end

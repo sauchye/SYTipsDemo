@@ -28,10 +28,10 @@
     self.navigationItem.rightBarButtonItem = registerBtn;
 
     [self showBackButton:YES];
-    [self configreUI];
+    [self configreView];
 }
 
-- (void)configreUI{
+- (void)configreView{
     CGFloat sapceHeight = 20;
     CGFloat txtHeight = 40;
     CGFloat currentWidth = self.view.frame.size.width;
@@ -82,38 +82,56 @@
     //成为第一响应者
     [_userTextField becomeFirstResponder];
     _userTextField.tintColor = _pwdTextField.tintColor= kNAVIGATION_BAR_COLOR;
+    _userTextField.clearButtonMode = _pwdTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
     //placeholder color  
 //    [_userTextField setValue:kNAVIGATION_BAR_COLOR forKeyPath:@"_placeholderLabel.textColor"];
 //    [_pwdTextField setValue:kNAVIGATION_BAR_COLOR forKeyPath:@"_placeholderLabel.textColor"];
     
-    
-    //RAC 
-    __weak UIButton *loginBtn = self.loginBtn;
+    if (!_loginBtn.enabled) {
+        [_loginBtn setBackgroundColor:kNAVIGATION_BAR_COLOR];
+    }else{
+        [_loginBtn setTintColor:[UIColor grayColor]];
+    }
+
+    //RAC
     RAC(self.loginBtn, enabled) = [RACSignal combineLatest:@[self.userTextField.rac_textSignal, self.pwdTextField.rac_textSignal] reduce:^id(NSString *userName, NSString *password) {
         return @(userName.length > 0  && password.length >= 6 );
-        [loginBtn setBackgroundColor:kNAVIGATION_BAR_COLOR];
     }];
+    
+
 }
 
 #pragma mark - button Action
 - (void)loginBtnClicked:(UIButton *)sender{
     [sender resignFirstResponder];
     [self.view endEditing:YES];
-    SYHUDView *hud = [SYHUDView showToView:kKeyWindow];
-    hud.labelText = VString(@"please waitting");
-    [hud hide:YES afterDelay:2.0];
+    [SYHUDView showToView:self.view success:YES text:@"Success" hide:2.0];
+    [self performSelector:@selector(dissmiss) withObject:nil afterDelay:2.0];
 }
+
 
 - (void)registerBtnClicked:(UIButton *)sender{
     SYRegisterViewController *registerVC = [[SYRegisterViewController alloc] init];
     [self.navigationController pushViewController:registerVC animated:YES];
 }
 
+- (void)dissmiss{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
 
 #pragma mark - backClickedAction
 - (void)backClickedAction:(UIButton *)sender{
     
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+#pragma mark - dealloc
+- (void)dealloc{
+    //避免延时导致内存泄露
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
 }
 
 

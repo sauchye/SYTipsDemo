@@ -66,8 +66,14 @@
 }
 
 - (void)leftAction{
-    SYHUDView *hud = [SYHUDView showTo:self.view hide:1.0];
-    hud.labelText = VString(@"leftBtn Clicked");
+    
+    [SYHUDView showToView:self.view text:@"Success" hide:2.0];
+    [SYHUDView showToView:self.view success:YES text:@"Success" hide:2.0];
+    [SYHUDView showToBottomView:self.view text:@"bottom Success" hide:2.0];
+    [SYHUDView showToView:self.view customImage:[UIImage imageNamed:@"nav_back_icon"] text:@"customImage" hide:2.0];
+    
+    SYHUDView *hud = [SYHUDView showToView:self.view];
+    [hud hide:YES afterDelay:2.0];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -30,8 +30,9 @@
 }
 
 //设置全屏手势 右滑返回
+//参考:http://www.jianshu.com/p/bc85a3d37519
+
 - (void)setPan{
-    //参考:http://www.jianshu.com/p/bc85a3d37519
 
     // 获取系统自带滑动手势的target对象
     id target = self.interactivePopGestureRecognizer.delegate;

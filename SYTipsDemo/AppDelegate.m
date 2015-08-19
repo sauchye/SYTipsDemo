@@ -24,8 +24,8 @@
     
     
     SYLog(@"width:%.f,height:%.f",kCURRENT_SCREEN_WIDTH, kCURRENT_SCREEN_HEIGHT);
+    //更改状态栏
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
-    
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
     
     
