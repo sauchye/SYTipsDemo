@@ -26,12 +26,10 @@ SYBaseNavigationController
     1.View controller-based status bar appearance 设置为NO;
     2.Status bar is initially hidden 设置成YES
     详情:请参考SYTipsDemo
-     ```
+     
 * set PanGestureRecognizer back(设置全屏手势右滑返回) 
 
-   ```objc
-   
-		- (void)setPan{
+   		- (void)setPan{
 
    		 id target = self.interactivePopGestureRecognizer.delegate;    
   		  UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:target action:@selector(handleNavigationTransition:)];
@@ -47,9 +45,8 @@ SYBaseNavigationController
   	     	 return NO;
  	 	    }
   	 	 return YES;
-		}
+		}  
 
-```    
     
    
    详情:<a href = "https://github.com/sauchye/SYTipsDemo/blob/master/SYTipsDemo/Base/SYBaseNavigationController.m">设置全屏手势右滑返回</a>
@@ -57,7 +54,6 @@ SYBaseNavigationController
     
 * package MBProgrssHUD(封装MBProgressHUD，更易用)<br/>
 
-	```objc
 	
 		+ (SYHUDView *)showToView:(UIView *)view text:(NSString *)text hide:(NSTimeInterval)time;
 
@@ -68,11 +64,9 @@ SYBaseNavigationController
 		+ (SYHUDView *)showToView:(UIView *)view customImage:(UIImage *)image text:(NSString *)text hide:(NSTimeInterval)time;
 		
 		+ (SYHUDView *)showToView:(UIView *)view;
-		```
 	
 	Example, easy use:
 	
-	 ``` objc
 	 	
 	 	[SYHUDView showToView:self.view text:@"Success" hide:2.0];
 	
@@ -85,7 +79,6 @@ SYBaseNavigationController
     	SYHUDView *hud = [SYHUDView showToView:self.view];
     
     	[hud hide:YES afterDelay:2.0]; 
-    	```
 
     And has many not finished...
 
