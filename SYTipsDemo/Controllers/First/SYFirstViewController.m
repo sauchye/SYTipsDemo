@@ -53,6 +53,7 @@
 
 - (void)leftAction{
     SYHUDView *hud = [SYHUDView showTo:self.view.window hide:2.0];
+    hud.customView = [UIImage imageNamed:@"hub_success"];
     hud.labelText = VString(@"Success");
 }
 
