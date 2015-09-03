@@ -3,7 +3,8 @@
 //  SYTipsDemo
 //
 //  Created by Sauchye on 8/11/15.
-//  Copyright (c) 2015 com.sauchye. All rights reserved.
+//  Copyright (c) 2015 sauchye.com. All rights reserved.
+//  https://github.com/sauchye/SYTipsDemo
 //
 
 #import "SYFirstViewController.h"
@@ -15,15 +16,27 @@
 
 @implementation SYFirstViewController
 
-#pragma MARK - life cicle
+#pragma mark - life cycle
+- (instancetype)init{
+    self = [super init];
+    
+    if (self) {
+        self.title = VString(@"First");
+        [self showBackButton:NO];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = VString(@"FirstPage");
     
-    UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithTitle:@"PushNextVC" style:UIBarButtonItemStylePlain target:self action:@selector(pushAction)];
+
+    [self showBackButton:NO];
+
+    UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithTitle:@"Right" style:UIBarButtonItemStylePlain target:self action:@selector(rightAction)];
     self.navigationItem.rightBarButtonItem = rightBtn;
     
-    UIBarButtonItem *leftBtn = [[UIBarButtonItem alloc] initWithTitle:@"leftButton" style:UIBarButtonItemStylePlain target:self action:@selector(leftAction)];
+    UIBarButtonItem *leftBtn = [[UIBarButtonItem alloc] initWithTitle:@"Left" style:UIBarButtonItemStylePlain target:self action:@selector(leftAction)];
     self.navigationItem.leftBarButtonItem = leftBtn;
 }
 
@@ -46,15 +59,20 @@
 
 
 #pragma mark - Button Action
-- (void)pushAction{
+- (void)rightAction{
     SYDetailViewController *detailVC = [[SYDetailViewController alloc] init];
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 - (void)leftAction{
-    SYHUDView *hud = [SYHUDView showTo:self.view.window hide:2.0];
-    hud.customView = [UIImage imageNamed:@"hub_success"];
-    hud.labelText = VString(@"Success");
+    
+//    [SYHUDView showToView:self.view text:@"Success" hide:2.0];
+//    [SYHUDView showToView:self.view success:YES text:@"Success" hide:2.0];
+//    [SYHUDView showToBottomView:self.view text:@"bottom Success" hide:2.0];
+    [SYHUDView showToView:self.view customImage:[UIImage imageNamed:@"nav_back_icon"] text:@"customImage" hide:2.0];
+    
+//    SYHUDView *hud = [SYHUDView showToView:self.view];
+//    [hud hide:YES afterDelay:2.0];
 }
 
 - (void)didReceiveMemoryWarning {

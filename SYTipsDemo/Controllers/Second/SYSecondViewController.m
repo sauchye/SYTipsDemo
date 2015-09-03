@@ -3,7 +3,8 @@
 //  SYTipsDemo
 //
 //  Created by Sauchye on 8/11/15.
-//  Copyright (c) 2015 com.sauchye. All rights reserved.
+//  Copyright (c) 2015 sauchye.com. All rights reserved.
+//  https://github.com/sauchye/SYTipsDemo
 //
 
 #import "SYSecondViewController.h"
@@ -14,10 +15,20 @@
 
 @implementation SYSecondViewController
 
+#pragma mark - life cycle
+- (instancetype)init{
+    self = [super init];
+    
+    if (self) {
+        self.title = VString(@"Second");
+        [self showBackButton:NO];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = VString(@"SecondPage");
     
 }
 

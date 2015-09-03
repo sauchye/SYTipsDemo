@@ -3,7 +3,8 @@
 //  SYTipsDemo
 //
 //  Created by Sauchye on 8/11/15.
-//  Copyright (c) 2015 com.sauchye. All rights reserved.
+//  Copyright (c) 2015 sauchye.com. All rights reserved.
+//  https://github.com/sauchye/SYTipsDemo
 //
 
 #import "SYRootViewController.h"
@@ -36,7 +37,7 @@
 - (void)customizeTabBarForController{
     
     //tabbar 背景图片 tabbar_background
-    UIImage *backgroundImage = [UIImage imageNamed:@""];
+    UIImage *backgroundImage = [UIImage imageNamed:@"tabbar_background"];
     //选项卡图片
     NSArray *tabBarItemImages = @[VString(@"First"), VString(@"Second"),VString(@"Third")];
     
