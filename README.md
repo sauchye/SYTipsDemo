@@ -37,11 +37,11 @@ plist添加：
   - (void)setPan{
   
   	id target = self.interactivePopGestureRecognizer.delegate;
-   
+  
       UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:target action:@selector(handleNavigationTransition:)];
-      
+  
       pan.delegate = self;
-      
+  
       [self.view addGestureRecognizer:pan];
       self.interactivePopGestureRecognizer.enabled = NO;
   
@@ -53,13 +53,13 @@ plist添加：
       }
       return YES;
   }
-    
+  
   ```
   
   ​
-
+  
    详情:<a href = "https://github.com/sauchye/SYTipsDemo/blob/master/SYTipsDemo/Base/SYBaseNavigationController.m">设置全屏手势右滑返回</a>
-
+  
 - package MBProgrssHUD(封装MBProgressHUD，更易用)<br/>
 
 ``` objective-c
@@ -81,11 +81,11 @@ plist添加：
 
 ``` objective-c
 	[SYHUDView showToView:self.view text:@"Success" hide:2.0];
-        
+
 	[SYHUDView showToView:self.view success:YES text:@"Success" hide:2.0];
 
 	SYHUDView *hud = [SYHUDView showToView:self.view];
-    
+
 	[hud hide:YES afterDelay:2.0]; 
 
 ```
@@ -119,9 +119,3 @@ Reference
 <a href="https://github.com/michaeltyson/TPKeyboardAvoiding">TPKeyboardAvoiding</a></br>
 
 <a href="https://github.com/jaydee3/JDStatusBarNotification">JDStatusBarNotification</a>
-
-
-
-### License
-
-SYTipsDemo is licensed under the MIT License.
