@@ -3,7 +3,8 @@
 //  SYTipsDemo
 //
 //  Created by Sauchye on 8/11/15.
-//  Copyright (c) 2015 com.sauchye. All rights reserved.
+//  Copyright (c) 2015 sauchye.com. All rights reserved.
+//  https://github.com/sauchye/SYTipsDemo
 //
 
 #import "SYBaseViewController.h"
@@ -15,20 +16,36 @@
 
 @implementation SYBaseViewController
 
+#pragma mark - life cycle
+- (instancetype)init{
+    self = [super init];
+    if (self) {
+        self.view.backgroundColor = [UIColor whiteColor];
+    }
+    return self;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    //更改back显示
-//    UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@""] style:UIBarButtonItemStylePlain target:self action:@selector(clicked:)];
-//    temporaryBarButtonItem.title = @"返回";
-//    self.navigationItem.backBarButtonItem = temporaryBarButtonItem;
-    self.view.backgroundColor = [UIColor whiteColor];
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-
 }
 
-- (void)clicked:(UIButton *)sender{
+- (void)showBackButton:(BOOL)isShow{
+    //系统返回按钮
+    //    UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@""] style:UIBarButtonItemStylePlain target:self action:@selector(backActionClicked:)];
+    //        temporaryBarButtonItem.title = @"返回";
+    //自定义返回按钮
+    if (isShow == YES) {
+        UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_back_icon"] style:UIBarButtonItemStylePlain target:self action:@selector(backClickedAction:)];
+        self.navigationItem.leftBarButtonItem = temporaryBarButtonItem;
+        self.view.backgroundColor = [UIColor whiteColor];
+        self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    }else{
+        return;
+    }
+}
+
+- (void)backClickedAction:(UIButton *)sender{
     
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - isMobileNumber
@@ -112,6 +129,19 @@
     }else{
         return 44.0f;
     }
+}
+
+
+- (NSString *)trimWhitespace
+{
+    NSMutableString *str = [self mutableCopy];
+    CFStringTrimWhitespace((__bridge CFMutableStringRef)str);
+    return str;
+}
+
+- (BOOL)isEmptyString:(NSString *)string
+{
+    return [[self trimWhitespace] isEqualToString:@""];
 }
 
 

@@ -3,7 +3,8 @@
 //  SYTipsDemo
 //
 //  Created by Sauchye on 8/11/15.
-//  Copyright (c) 2015 com.sauchye. All rights reserved.
+//  Copyright (c) 2015 sauchye.com. All rights reserved.
+//  https://github.com/sauchye/SYTipsDemo
 //
 
 #import "AppDelegate.h"
@@ -22,9 +23,9 @@
     [self.window makeKeyAndVisible];
     
     
-    SYLog(@"width:%f,height:%f",kCURRENT_SCREEN_WIDTH, kCURRENT_SCREEN_HEIGHT);
+    SYLog(@"width:%.f,height:%.f",kCURRENT_SCREEN_WIDTH, kCURRENT_SCREEN_HEIGHT);
+    //更改状态栏
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
-    
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
     
     

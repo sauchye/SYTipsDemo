@@ -3,7 +3,8 @@
 //  SYTipsDemo
 //
 //  Created by Sauchye on 8/11/15.
-//  Copyright (c) 2015 com.sauchye. All rights reserved.
+//  Copyright (c) 2015 sauchye.com. All rights reserved.
+//  https://github.com/sauchye/SYTipsDemo
 //
 
 #import "SYBaseNavigationController.h"
@@ -18,7 +19,7 @@
     [super viewDidLoad];
 
     // 导航相关设置 导航栏颜色设置
-    [self.navigationBar setBarTintColor:[UIColor colorWithRed:20/255.0 green:155/255.0 blue:213/255.0 alpha:1.0]];
+    [self.navigationBar setBarTintColor:kNAVIGATION_BAR_COLOR];
     //返回按钮颜色设置
     self.navigationBar.tintColor = [UIColor whiteColor];
     
@@ -29,8 +30,9 @@
 }
 
 //设置全屏手势 右滑返回
+//参考:http://www.jianshu.com/p/bc85a3d37519
+
 - (void)setPan{
-    //参考:http://www.jianshu.com/p/bc85a3d37519
 
     // 获取系统自带滑动手势的target对象
     id target = self.interactivePopGestureRecognizer.delegate;

@@ -3,15 +3,29 @@
 //  SYTipsDemo
 //
 //  Created by Sauchye on 8/11/15.
-//  Copyright (c) 2015 com.sauchye. All rights reserved.
+//  Copyright (c) 2015 sauchye.com. All rights reserved.
+//  https://github.com/sauchye/SYTipsDemo
 //
 
 #import <UIKit/UIKit.h>
 
-/**
- *  SYBaseViewController 基类控制
- */
+/***  SYBaseViewController 基类控制*/
 @interface SYBaseViewController : UIViewController
+
+/**
+ *  是否显示返回按钮
+ *
+ *  @param isShow
+ */
+- (void)showBackButton:(BOOL)isShow;
+
+
+/**
+ *  返回按钮事件  控制presnet还是push
+ *
+ *  @param sender
+ */
+- (void)backClickedAction:(UIButton *)sender;
 
 /**
  *  隐藏tableView 多余的线
@@ -51,5 +65,13 @@
  *  @return 高度
  */
 - (NSInteger )getCurrentVersionScreenHight;
+
+/**
+ *  空格处理
+ *
+ *  @return 
+ */
+- (NSString *)trimWhitespace;
+- (BOOL)isEmptyString:(NSString *)string;
 
 @end
