@@ -36,14 +36,6 @@
  */
 - (void)setExtraCellLineHidden: (UITableView *)tableView;
 
-/**
- *  判断是否为有效手机号码
- *
- *  @param mobileNumber 手机号码
- *
- *  @return Yes or No
- */
-- (BOOL)isMobileNumber:(NSString *)mobileNumber;
 
 /**
  *  存储文件
@@ -61,13 +53,6 @@
  */
 - (void)clickedPastedContent:(NSString *)content;
 
-/**
- *  空格处理
- *
- *  @return 
- */
-- (NSString *)trimWhitespace;
-- (BOOL)isEmptyString:(NSString *)string;
 
 /*** 显示状态栏加载菊花显示 */
 - (void)showStatusLoading;
