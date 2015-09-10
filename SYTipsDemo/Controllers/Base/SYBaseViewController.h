@@ -75,4 +75,13 @@
 /*** 隐藏状态栏加载菊花显示 */
 - (void)hideStatusLoading;
 
+
+/**
+ *  左右上下 抖动
+ *
+ *  @param view            view
+ *  @param isVerticalShake 水平还是竖直
+ */
+- (void)shakeAnimationForView:(UIView *)view isVerticalShake:(BOOL)isVerticalShake;
+
 @end

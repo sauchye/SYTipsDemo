@@ -151,6 +151,35 @@
 }
 
 
+#pragma mark - 抖动效果
+- (void)shakeAnimationForView:(UIView *)view isVerticalShake:(BOOL)isVerticalShake{
+    
+    CALayer *layer = [view layer];
+    CGPoint posLbl = [layer position];
+    CGPoint x, y;
+    
+    if (!isVerticalShake) {
+        
+        y = CGPointMake(posLbl.x - 10, posLbl.y);
+        x = CGPointMake(posLbl.x + 10, posLbl.y);
+    }else{
+        y = CGPointMake(posLbl.x, posLbl.y - 5);
+        x = CGPointMake(posLbl.x, posLbl.y + 5);
+    }
+    
+    CABasicAnimation * animation = [CABasicAnimation animationWithKeyPath:@"position"];
+    [animation setTimingFunction:[CAMediaTimingFunction
+                                  functionWithName:kCAMediaTimingFunctionEaseOut]];
+    [animation setFromValue:[NSValue valueWithCGPoint:x]];
+    [animation setToValue:[NSValue valueWithCGPoint:y]];
+    [animation setAutoreverses:YES];
+    [animation setDuration:0.09];
+    [animation setRepeatCount:3];
+    [layer addAnimation:animation forKey:nil];
+}
+
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
