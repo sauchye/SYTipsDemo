@@ -18,7 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = VString(@"Register");
-    [self showBackButton:YES];
+    [self showBackButton];
 }
 
 - (void)didReceiveMemoryWarning {

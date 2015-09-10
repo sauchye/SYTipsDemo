@@ -25,11 +25,27 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = VString(@"Login");
-    UIBarButtonItem *registerBtn = [[UIBarButtonItem alloc] initWithTitle:@"register" style:UIBarButtonItemStylePlain target:self action:@selector(registerBtnClicked:)];
+    UIBarButtonItem *registerBtn = [[UIBarButtonItem alloc] initWithTitle:@"Register" style:UIBarButtonItemStylePlain target:self action:@selector(registerBtnClicked:)];
     self.navigationItem.rightBarButtonItem = registerBtn;
 
-    [self showBackButton:YES];
     [self configreView];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [[self rdv_tabBarController] setTabBarHidden:YES animated:YES];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+}
+
+- (void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
 }
 
 - (void)configreView{
@@ -89,32 +105,47 @@
     
     _userTextField.layer.borderWidth = 1;
     _pwdTextField.layer.borderWidth = 1;
-    _userTextField.layer.borderColor = [UIColor clearColor].CGColor;
     _pwdTextField.layer.borderColor = [UIColor clearColor].CGColor;
     
     
     ViewRadius(_userTextField, 5.0);
     ViewRadius(_pwdTextField, 5.0);
+
+    _userTextField.text = VString(@"sauchye");
+    _userTextField.layer.borderColor = [UIColor clearColor].CGColor;
+    _pwdTextField.layer.borderColor = [UIColor clearColor].CGColor;
+    ViewRadius(_userTextField, 5.0);
+    ViewRadius(_pwdTextField, 5.0);
+    [_loginBtn setBackgroundColor:kNAVIGATION_BAR_COLOR];
+    [_loginBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
     //placeholder color
 //    [_userTextField setValue:kNAVIGATION_BAR_COLOR forKeyPath:@"_placeholderLabel.textColor"];
-//    [_pwdTextField setValue:kNAVIGATION_BAR_COLOR forKeyPath:@"_placeholderLabel.textColor"];
     
-    if (!_loginBtn.enabled) {
-        [_loginBtn setBackgroundColor:kNAVIGATION_BAR_COLOR];
-    }else{
-        [_loginBtn setTintColor:[UIColor grayColor]];
-    }
-
     //RAC
-    RAC(self.loginBtn, enabled) = [RACSignal combineLatest:@[self.userTextField.rac_textSignal, self.pwdTextField.rac_textSignal] reduce:^id(NSString *userName, NSString *password) {
-        return @(userName.length > 0  && password.length >= 6 );
-    }];
+//    RAC(self.loginBtn, enabled) = [RACSignal combineLatest:@[self.userTextField.rac_textSignal, self.pwdTextField.rac_textSignal] reduce:^id(NSString *userName, NSString *password) {
+//        return @(userName.length > 0  && password.length >= 6 );
+//    }];
     
+//    [_userTextField addTarget:self action:@selector(updateLoginButton) forControlEvents:UIControlEventEditingChanged];
+//    [_pwdTextField addTarget:self action:@selector(updateLoginButton) forControlEvents:UIControlEventEditingChanged];
+}
 
+
+
+
+#pragma mark - button Action
+
+
+- (void)shakeView{
+    _pwdTextField.text = nil;
+    [self shakeAnimationForView:_pwdTextField isVerticalShake:NO];
+    [self shakeAnimationForView:_userTextField isVerticalShake:NO];
+    _pwdTextField.layer.borderColor = [UIColor redColor].CGColor;
+    _userTextField.layer.borderColor = [UIColor redColor].CGColor;
 }
 
 #pragma mark - 抖动效果
-//参考：http://old.code4app.com/ios/WHMShakeTextField/5248f6716803faa614000000
 - (void)shakeAnimationForView:(UIView *)view isVerticalShake:(BOOL)isVerticalShake{
     
     CALayer *layer = [view layer];

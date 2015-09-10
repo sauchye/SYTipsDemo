@@ -9,6 +9,7 @@
 
 #import <Foundation/Foundation.h>
 
+/***  SYManager 共用管理 */
 @interface SYManager : NSObject
 
 @end

@@ -20,8 +20,7 @@
     self = [super init];
     
     if (self) {
-        self.title = VString(@"SecondPage");
-        [self showBackButton:NO];
+        self.title = VString(@"Second");
     }
     return self;
 }

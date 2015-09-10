@@ -28,19 +28,17 @@
     [super viewDidLoad];
 }
 
-- (void)showBackButton:(BOOL)isShow{
+- (void)showBackButton{
     //系统返回按钮
     //    UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@""] style:UIBarButtonItemStylePlain target:self action:@selector(backActionClicked:)];
     //        temporaryBarButtonItem.title = @"返回";
+    
     //自定义返回按钮
-    if (isShow == YES) {
-        UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_back_icon"] style:UIBarButtonItemStylePlain target:self action:@selector(backClickedAction:)];
-        self.navigationItem.leftBarButtonItem = temporaryBarButtonItem;
-        self.view.backgroundColor = [UIColor whiteColor];
-        self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    }else{
-        return;
-    }
+    UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_back_icon"] style:UIBarButtonItemStylePlain target:self action:@selector(backClickedAction:)];
+    temporaryBarButtonItem.title = _backBtnTitle;
+    self.navigationItem.leftBarButtonItem = temporaryBarButtonItem;
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 }
 
 - (void)backClickedAction:(UIButton *)sender{
@@ -131,17 +129,25 @@
     }
 }
 
-
-- (NSString *)trimWhitespace
-{
+#pragma mark - trimWhitespace 解决空格判断
+- (NSString *)trimWhitespace{
     NSMutableString *str = [self mutableCopy];
     CFStringTrimWhitespace((__bridge CFMutableStringRef)str);
     return str;
 }
 
-- (BOOL)isEmptyString:(NSString *)string
-{
+- (BOOL)isEmptyString:(NSString *)string{
+    
     return [[self trimWhitespace] isEqualToString:@""];
+}
+
+#pragma mark - showStatusLoading
+- (void)showStatusLoading{
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+}
+
+- (void)hideStatusLoading{
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 }
 
 
@@ -150,14 +156,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

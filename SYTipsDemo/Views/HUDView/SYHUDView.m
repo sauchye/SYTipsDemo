@@ -77,11 +77,12 @@
     hud.animationType = MBProgressHUDAnimationZoom;
     hud.mode = MBProgressHUDModeCustomView;
     hud.labelText = text;
+    hud.alpha = 0.5;
     hud.labelFont = kHudFont(kHudFontSize);
     if (isSuccess) {
-        hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hub_success"]];
+        hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hud_success"]];
     }else{
-        hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hub_error"]];
+        hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hud_error"]];
         
     }
     [hud showAnimated:YES whileExecutingBlock:^{

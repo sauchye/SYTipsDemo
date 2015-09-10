@@ -19,7 +19,7 @@
     [super viewDidLoad];
     
     self.title = @"Detail";
-    [self showBackButton:YES];
+    [self showBackButton];
 }
 
 - (void)viewWillAppear:(BOOL)animated{

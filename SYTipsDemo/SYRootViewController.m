@@ -37,7 +37,7 @@
 - (void)customizeTabBarForController{
     
     //tabbar 背景图片 tabbar_background
-    UIImage *backgroundImage = [UIImage imageNamed:@""];
+    UIImage *backgroundImage = [UIImage imageNamed:@"tabbar_background"];
     //选项卡图片
     NSArray *tabBarItemImages = @[VString(@"First"), VString(@"Second"),VString(@"Third")];
     
@@ -68,6 +68,12 @@
         
     }
 }
+
+#pragma mark - Orientations 竖屏
+- (BOOL)shouldAutorotate{
+    return NO;
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

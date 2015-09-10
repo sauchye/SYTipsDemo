@@ -12,12 +12,14 @@
 /***  SYBaseViewController 基类控制*/
 @interface SYBaseViewController : UIViewController
 
+
+@property (nonatomic, copy) NSString *backBtnTitle;
 /**
  *  是否显示返回按钮
  *
  *  @param isShow
  */
-- (void)showBackButton:(BOOL)isShow;
+- (void)showBackButton;
 
 
 /**
@@ -60,18 +62,17 @@
 - (void)clickedPastedContent:(NSString *)content;
 
 /**
- *  获取当前屏幕高度
- *
- *  @return 高度
- */
-- (NSInteger )getCurrentVersionScreenHight;
-
-/**
  *  空格处理
  *
  *  @return 
  */
 - (NSString *)trimWhitespace;
 - (BOOL)isEmptyString:(NSString *)string;
+
+/*** 显示状态栏加载菊花显示 */
+- (void)showStatusLoading;
+
+/*** 隐藏状态栏加载菊花显示 */
+- (void)hideStatusLoading;
 
 @end

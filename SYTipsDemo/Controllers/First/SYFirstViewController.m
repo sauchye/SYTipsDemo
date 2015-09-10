@@ -21,8 +21,7 @@
     self = [super init];
     
     if (self) {
-        self.title = VString(@"FirstPage");
-        [self showBackButton:NO];
+        self.title = VString(@"First");
     }
     return self;
 }
@@ -30,14 +29,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self showBackButton:NO];
-    //设置角标
-    self.rdv_tabBarItem.badgeValue = VString(@"2");
-
-    UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithTitle:@"rightBtn" style:UIBarButtonItemStylePlain target:self action:@selector(rightAction)];
+    UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithTitle:@"Right" style:UIBarButtonItemStylePlain target:self action:@selector(rightAction)];
     self.navigationItem.rightBarButtonItem = rightBtn;
     
-    UIBarButtonItem *leftBtn = [[UIBarButtonItem alloc] initWithTitle:@"leftBtn" style:UIBarButtonItemStylePlain target:self action:@selector(leftAction)];
+    UIBarButtonItem *leftBtn = [[UIBarButtonItem alloc] initWithTitle:@"Left" style:UIBarButtonItemStylePlain target:self action:@selector(leftAction)];
     self.navigationItem.leftBarButtonItem = leftBtn;
 }
 
