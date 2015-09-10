@@ -28,22 +28,72 @@
     [super viewDidLoad];
 }
 
-- (void)showBackButton{
+- (void)showBackButtonTitle:(NSString *)title{
     //系统返回按钮
     //    UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@""] style:UIBarButtonItemStylePlain target:self action:@selector(backActionClicked:)];
     //        temporaryBarButtonItem.title = @"返回";
     
     //自定义返回按钮
     UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_back_icon"] style:UIBarButtonItemStylePlain target:self action:@selector(backClickedAction:)];
-    temporaryBarButtonItem.title = _backBtnTitle;
+    temporaryBarButtonItem.title = title;
     self.navigationItem.leftBarButtonItem = temporaryBarButtonItem;
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 }
 
+- (void)showRightBarItemTitle:(NSString *)title{
+    
+    UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStylePlain target:self action:@selector(rightBarClickAction)];
+    self.navigationItem.rightBarButtonItem = rightBtn;
+}
+
+- (void)showLeftBarItemTitle:(NSString *)title{
+    
+    UIBarButtonItem *leftBtn = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStylePlain target:self action:@selector(leftBarClickAction)];
+    self.navigationItem.leftBarButtonItem = leftBtn;
+}
+
+- (void)showLeftBarItemImage:(UIImage *)normal highLighted:(UIImage *)highLighted{
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(0, 0, 30, 30);
+        btn.contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 10);
+    [btn addTarget:self action:@selector(rightBarClickAction) forControlEvents:UIControlEventTouchUpInside];
+    [btn setImage:normal forState:UIControlStateNormal];
+    [btn setImage:highLighted forState:UIControlStateHighlighted];
+    
+    UIBarButtonItem *barItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    self.navigationItem.leftBarButtonItem = barItem;
+    
+}
+
+- (void)showRightBarItemImage:(UIImage *)normal highLighted:(UIImage *)highLighted{
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(0, 0, 30, 30);
+        btn.contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 10);
+    [btn addTarget:self action:@selector(leftBarClickAction) forControlEvents:UIControlEventTouchUpInside];
+    [btn setBackgroundImage:normal forState:UIControlStateNormal];
+    [btn setImage:highLighted forState:UIControlStateHighlighted];
+    
+    UIBarButtonItem *barItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    self.navigationItem.rightBarButtonItem = barItem;
+    
+}
+
+#pragma mark - button action
 - (void)backClickedAction:(UIButton *)sender{
     
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+
+- (void)leftBarClickAction{
+    
+}
+
+- (void)rightBarClickAction{
+    
 }
 
 

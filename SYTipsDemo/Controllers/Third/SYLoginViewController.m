@@ -25,9 +25,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = VString(@"Login");
-    UIBarButtonItem *registerBtn = [[UIBarButtonItem alloc] initWithTitle:@"Register" style:UIBarButtonItemStylePlain target:self action:@selector(registerBtnClicked:)];
-    self.navigationItem.rightBarButtonItem = registerBtn;
-    [self showBackButton];
+    [self showRightBarItemTitle:VString(@"Register")];
+    [self showBackButtonTitle:VString(@"111")];
     [self configreView];
 }
 
@@ -186,20 +185,17 @@
 
 
 
-- (void)registerBtnClicked:(UIButton *)sender{
+#pragma mark - backClickedAction
+- (void)rightBarClickAction{
     SYRegisterViewController *registerVC = [[SYRegisterViewController alloc] init];
     [self.navigationController pushViewController:registerVC animated:YES];
 }
 
-- (void)dissmiss{
-    [self dismissViewControllerAnimated:YES completion:nil];
+- (void)backClickedAction:(UIButton *)sender{
+    [self dissmiss];
 }
 
-
-
-#pragma mark - backClickedAction
-- (void)backClickedAction:(UIButton *)sender{
-    
+- (void)dissmiss{
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

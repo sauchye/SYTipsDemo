@@ -29,11 +29,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithTitle:@"Right" style:UIBarButtonItemStylePlain target:self action:@selector(rightAction)];
-    self.navigationItem.rightBarButtonItem = rightBtn;
-    
-    UIBarButtonItem *leftBtn = [[UIBarButtonItem alloc] initWithTitle:@"Left" style:UIBarButtonItemStylePlain target:self action:@selector(leftAction)];
-    self.navigationItem.leftBarButtonItem = leftBtn;
+    [self showLeftBarItemTitle:VString(@"Left")];
+    [self showRightBarItemTitle:VString(@"Right")];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -55,20 +52,13 @@
 
 
 #pragma mark - Button Action
-- (void)rightAction{
+- (void)rightBarClickAction{
     SYDetailViewController *detailVC = [[SYDetailViewController alloc] init];
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 
-- (void)leftAction{
-    
-//    [SYHUDView showToView:self.view text:@"Success" hide:2.0];
-//    [SYHUDView showToView:self.view success:YES text:@"Success" hide:2.0];
-//    [SYHUDView showToBottomView:self.view text:@"bottom Success" hide:2.0];
+- (void)leftBarClickAction{
     [SYHUDView showToView:self.view customImage:[UIImage imageNamed:@"nav_back_icon"] text:@"customImage" hide:2.0];
-    
-//    SYHUDView *hud = [SYHUDView showToView:self.view];
-//    [hud hide:YES afterDelay:2.0];
 }
 
 - (void)didReceiveMemoryWarning {

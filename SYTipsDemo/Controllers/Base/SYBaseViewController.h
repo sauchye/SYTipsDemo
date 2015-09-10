@@ -13,13 +13,15 @@
 @interface SYBaseViewController : UIViewController
 
 
-@property (nonatomic, copy) NSString *backBtnTitle;
+
+#pragma mark - navigation bar
+
 /**
  *  是否显示返回按钮
  *
  *  @param isShow
  */
-- (void)showBackButton;
+- (void)showBackButtonTitle:(NSString *)title;
 
 
 /**
@@ -29,6 +31,48 @@
  */
 - (void)backClickedAction:(UIButton *)sender;
 
+
+/**
+ *  showLeftBarItemTitle 纯文字
+ *
+ *  @param title title
+ */
+- (void)showLeftBarItemTitle:(NSString *)title;
+/**
+ *  showRightBarItemTitle 纯文字
+ *
+ *  @param title title
+ */
+- (void)showRightBarItemTitle:(NSString *)title;
+
+/**
+ * showLeftBarItemImage
+ *
+ *  @param normal      normal
+ *  @param highLighted highLighted
+ */
+- (void)showLeftBarItemImage:(UIImage *)normal highLighted:(UIImage *)highLighted;
+
+
+/**
+ *  showRightBarItemImage
+ *
+ *  @param normal      normal
+ *  @param highLighted highLighted
+ */
+- (void)showRightBarItemImage:(UIImage *)normal highLighted:(UIImage *)highLighted;
+
+/**
+ *leftBarClickAction 按钮事件处理
+ */
+- (void)leftBarClickAction;
+/**
+ *rightBarClickAction 按钮事件处理
+ */
+- (void)rightBarClickAction;
+
+
+#pragma mark - other
 /**
  *  隐藏tableView 多余的线
  *
