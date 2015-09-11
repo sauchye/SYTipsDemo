@@ -710,6 +710,7 @@
 			baseConfigurationReference = B95B2FDB96E1A8BA0EF25F3A /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				GCC_PREFIX_HEADER = SYTipsDemo/SYTipsPrefixHeader.pch;
 				INFOPLIST_FILE = SYTipsDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
