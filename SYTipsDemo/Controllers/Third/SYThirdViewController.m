@@ -12,8 +12,7 @@
 #import "SYPresentHead.h"
 #import "SYModalViewController.h"
 
-@interface SYThirdViewController ()<UIViewControllerTransitioningDelegate>
-
+@interface SYThirdViewController () <UIViewControllerTransitioningDelegate>
 @property (nonatomic, strong) SYBouncePresentAnimation *presentAnimation;
 @property (nonatomic, strong) SYNormalDismissAnimation *dismissAnimation;
 @property (nonatomic, strong) SYSwipeUpInteractiveTransition *transitionController;
@@ -29,7 +28,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         
-        self.title = VString(@"Third");
         _presentAnimation = [SYBouncePresentAnimation new];
         _dismissAnimation = [SYNormalDismissAnimation new];
         _transitionController = [SYSwipeUpInteractiveTransition new];
@@ -98,11 +96,12 @@
 }
 
 
-
 #pragma mark - animationControllerForPresentedController
 - (id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
 {
+    
     return self.presentAnimation;
+    
 }
 
 -(id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed

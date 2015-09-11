@@ -18,8 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"Detail";
-    [self showBackButtonTitle:VString(@"detail")];
+    self.title = VString(@"Detail");
+    [self showBackButtonTitle:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated{

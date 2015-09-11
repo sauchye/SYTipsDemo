@@ -21,7 +21,6 @@
     self = [super init];
     
     if (self) {
-        self.title = VString(@"First");
     }
     return self;
 }

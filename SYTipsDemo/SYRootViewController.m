@@ -25,7 +25,9 @@
     SYFirstViewController *firstVC = [[SYFirstViewController alloc] init];
     SYSecondViewController *secondVC = [[SYSecondViewController alloc] init];
     SYThirdViewController *thirdVC = [[SYThirdViewController alloc] init];
-    
+    firstVC.title = VString(@"Home");
+    secondVC.title = VString(@"Found");
+    thirdVC.title = VString(@"");
     self.firstNav = [[SYBaseNavigationController alloc] initWithRootViewController:firstVC];
     self.secondNav = [[SYBaseNavigationController alloc] initWithRootViewController:secondVC];
     self.thirdNav = [[SYBaseNavigationController alloc] initWithRootViewController:thirdVC];
@@ -39,9 +41,10 @@
     //tabbar 背景图片 tabbar_background
     UIImage *backgroundImage = [UIImage imageNamed:@"tabbar_background"];
     //选项卡图片
-    NSArray *tabBarItemImages = @[VString(@"First"), VString(@"Second"),VString(@"Third")];
+    NSArray *tabBarItemImages;//这里添加图片
+    //= @[VString(@"First"), VString(@"Second"),VString(@"Third")];
     
-    NSArray *tabBarItemTitles = @[VString(@"First"), VString(@"Second"), VString(@"Third")];
+    NSArray *tabBarItemTitles = @[VString(@"Home"), VString(@"Found"), VString(@"Me")];
     NSInteger index = 0;
     for (RDVTabBarItem *item in [[self tabBar] items])
     {
@@ -70,9 +73,9 @@
 }
 
 #pragma mark - Orientations 竖屏
-- (BOOL)shouldAutorotate{
-    return NO;
-}
+//- (BOOL)shouldAutorotate{
+//    return NO;
+//}
 
 
 - (void)didReceiveMemoryWarning {

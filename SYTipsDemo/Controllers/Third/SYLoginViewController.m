@@ -50,7 +50,7 @@
 - (void)configreView{
     CGFloat sapceHeight = 20;
     CGFloat txtHeight = 40;
-    CGFloat currentWidth = self.view.frame.size.width;
+    CGFloat currentWidth = kCURRENT_SCREEN_WIDTH;
     _userTextField = [[UITextField alloc] init];
     _userTextField.borderStyle = UITextBorderStyleRoundedRect;
     _userTextField.placeholder = @"   please set username:";
@@ -64,7 +64,7 @@
     
     
     _loginBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [_loginBtn setTitle:@"Login" forState:UIControlStateNormal];
+    [_loginBtn setTitle:VString(@"Login") forState:UIControlStateNormal];
     [_loginBtn addTarget:self action:@selector(loginBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_loginBtn];
     

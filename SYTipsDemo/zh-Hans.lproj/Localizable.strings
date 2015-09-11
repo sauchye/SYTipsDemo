@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  SYTipsDemo
+
+  Created by Saucheong Ye on 9/11/15.
+  Copyright (c) 2015 sauchye.com. All rights reserved.
+*/
+
+//tabBat item and title
+"Home" = "主页";
+"Found" = "发现";
+"Me" = "我";
+
+//other
+"Login" = "登录";
+"Register" = "注册";
+"Detail" = "详情";
+"Left" = "左按钮";
+"Right" = "右按钮";

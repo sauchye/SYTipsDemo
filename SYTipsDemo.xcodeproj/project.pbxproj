@@ -15,6 +15,11 @@
 		0206FEF11B7B4B0D009F2AA7 /* SYFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0206FEE91B7B4B0D009F2AA7 /* SYFirstViewController.m */; };
 		0206FEF21B7B4B0D009F2AA7 /* SYSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0206FEEC1B7B4B0D009F2AA7 /* SYSecondViewController.m */; };
 		0206FEF31B7B4B0D009F2AA7 /* SYThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0206FEEF1B7B4B0D009F2AA7 /* SYThirdViewController.m */; };
+		022CCF5D1BA26DD200569808 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 022CCF5C1BA26DD200569808 /* Info.plist */; };
+		022CCF661BA26FD000569808 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 022CCF681BA26FD000569808 /* InfoPlist.strings */; };
+		022CCF6A1BA2704A00569808 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 022CCF6C1BA2704A00569808 /* Localizable.strings */; };
+		022CCF701BA2746700569808 /* SYPresentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 022CCF6F1BA2746700569808 /* SYPresentViewController.m */; };
+		022CCF741BA27FC700569808 /* plus@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 022CCF731BA27FC700569808 /* plus@2x.png */; };
 		C51996831B7A4F7C0007FB90 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C51996821B7A4F7C0007FB90 /* main.m */; };
 		C51996861B7A4F7C0007FB90 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C51996851B7A4F7C0007FB90 /* AppDelegate.m */; };
 		C519968C1B7A4F7C0007FB90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C519968A1B7A4F7C0007FB90 /* Main.storyboard */; };
@@ -66,11 +71,22 @@
 		0206FEEC1B7B4B0D009F2AA7 /* SYSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYSecondViewController.m; sourceTree = "<group>"; };
 		0206FEEE1B7B4B0D009F2AA7 /* SYThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYThirdViewController.h; sourceTree = "<group>"; };
 		0206FEEF1B7B4B0D009F2AA7 /* SYThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYThirdViewController.m; sourceTree = "<group>"; };
+		022CCF5C1BA26DD200569808 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		022CCF5E1BA26DEC00569808 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		022CCF5F1BA26DEC00569808 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		022CCF601BA26DF300569808 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		022CCF611BA26DF300569808 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		022CCF671BA26FD000569808 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		022CCF691BA26FD200569808 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		022CCF6B1BA2704A00569808 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		022CCF6D1BA2704C00569808 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		022CCF6E1BA2746700569808 /* SYPresentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYPresentViewController.h; sourceTree = "<group>"; };
+		022CCF6F1BA2746700569808 /* SYPresentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYPresentViewController.m; sourceTree = "<group>"; };
+		022CCF731BA27FC700569808 /* plus@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plus@2x.png"; sourceTree = "<group>"; };
 		1650FE1C75DEE200373E4A8D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B8B392C08B16688E0F61D4C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B95B2FDB96E1A8BA0EF25F3A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C519967D1B7A4F7C0007FB90 /* SYTipsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SYTipsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C51996811B7A4F7C0007FB90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C51996821B7A4F7C0007FB90 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C51996841B7A4F7C0007FB90 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C51996851B7A4F7C0007FB90 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -166,6 +182,7 @@
 		0206FEB81B7B4930009F2AA7 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				022CCF731BA27FC700569808 /* plus@2x.png */,
 				C54840AB1B98A3030037F3A9 /* HudView */,
 				0206FEBE1B7B4930009F2AA7 /* nav */,
 				0206FEC11B7B4930009F2AA7 /* tab_bar_icon */,
@@ -206,6 +223,8 @@
 			children = (
 				0206FEEB1B7B4B0D009F2AA7 /* SYSecondViewController.h */,
 				0206FEEC1B7B4B0D009F2AA7 /* SYSecondViewController.m */,
+				022CCF6E1BA2746700569808 /* SYPresentViewController.h */,
+				022CCF6F1BA2746700569808 /* SYPresentViewController.m */,
 			);
 			path = Second;
 			sourceTree = "<group>";
@@ -287,9 +306,11 @@
 		C51996801B7A4F7C0007FB90 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C51996811B7A4F7C0007FB90 /* Info.plist */,
+				022CCF5C1BA26DD200569808 /* Info.plist */,
 				C51996821B7A4F7C0007FB90 /* main.m */,
 				0206FEA31B7B38CF009F2AA7 /* SYTipsPrefixHeader.pch */,
+				022CCF681BA26FD000569808 /* InfoPlist.strings */,
+				022CCF6C1BA2704A00569808 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -440,8 +461,8 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				en,
 			);
 			mainGroup = C51996741B7A4F7C0007FB90;
 			productRefGroup = C519967E1B7A4F7C0007FB90 /* Products */;
@@ -461,12 +482,16 @@
 			files = (
 				C54840B21B98A3030037F3A9 /* hud_error@2x.png in Resources */,
 				0206FED41B7B4930009F2AA7 /* nav_back_icon@3x.png in Resources */,
+				022CCF6A1BA2704A00569808 /* Localizable.strings in Resources */,
+				022CCF5D1BA26DD200569808 /* Info.plist in Resources */,
 				C519968C1B7A4F7C0007FB90 /* Main.storyboard in Resources */,
 				C54840B61B98A3030037F3A9 /* hud_success@2x.png in Resources */,
 				C51996911B7A4F7D0007FB90 /* LaunchScreen.xib in Resources */,
 				C519968E1B7A4F7C0007FB90 /* Images.xcassets in Resources */,
+				022CCF741BA27FC700569808 /* plus@2x.png in Resources */,
 				0206FED31B7B4930009F2AA7 /* nav_back_icon@2x.png in Resources */,
 				0206FEE11B7B4930009F2AA7 /* tabbar_background.png in Resources */,
+				022CCF661BA26FD000569808 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,6 +546,7 @@
 				C57CA33A1B823FFC002A8C87 /* SYRegisterViewController.m in Sources */,
 				C54840A71B98A1EF0037F3A9 /* SYBaseNavigationController.m in Sources */,
 				C54840CD1B98B8720037F3A9 /* SYModalViewController.m in Sources */,
+				022CCF701BA2746700569808 /* SYPresentViewController.m in Sources */,
 				C51996861B7A4F7C0007FB90 /* AppDelegate.m in Sources */,
 				C54840BC1B98AB4C0037F3A9 /* SYManager.m in Sources */,
 				C51996831B7A4F7C0007FB90 /* main.m in Sources */,
@@ -558,10 +584,30 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		022CCF681BA26FD000569808 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				022CCF671BA26FD000569808 /* zh-Hans */,
+				022CCF691BA26FD200569808 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		022CCF6C1BA2704A00569808 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				022CCF6B1BA2704A00569808 /* zh-Hans */,
+				022CCF6D1BA2704C00569808 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		C519968A1B7A4F7C0007FB90 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				C519968B1B7A4F7C0007FB90 /* Base */,
+				022CCF5E1BA26DEC00569808 /* zh-Hans */,
+				022CCF601BA26DF300569808 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -570,6 +616,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				C51996901B7A4F7D0007FB90 /* Base */,
+				022CCF5F1BA26DEC00569808 /* zh-Hans */,
+				022CCF611BA26DF300569808 /* en */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";

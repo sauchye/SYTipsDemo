@@ -1,5 +1,6 @@
 PODS:
   - JDStatusBarNotification (1.4.9)
+  - JTMaterialTransition (1.0.4)
   - Masonry (0.6.2)
   - MBProgressHUD (0.9.1)
   - RDVTabBarController (1.1.9)
@@ -18,6 +19,7 @@ PODS:
 
 DEPENDENCIES:
   - JDStatusBarNotification (~> 1.4.9)
+  - JTMaterialTransition
   - Masonry
   - MBProgressHUD (~> 0.9.1)
   - RDVTabBarController
@@ -28,6 +30,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   JDStatusBarNotification: 373d8fcdc8d17e59babb818271c63c9a2f030ba4
+  JTMaterialTransition: bebb2567eee81224becf3945695a08ea134468e3
   Masonry: 362e8a1cc0beada4a4c4832d5e863da2a51533be
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   RDVTabBarController: 67794f7a7a37f8e32f046f85ac67d06ab92d624a
@@ -36,4 +39,4 @@ SPEC CHECKSUMS:
   TPKeyboardAvoiding: 0a40dfbb0af7c8bdae1dd457496dccfd217d85f6
   TTTAttributedLabel: 0a2ac7b2dd726d32a070dafb01446026b11e624f
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.38.2

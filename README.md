@@ -114,6 +114,8 @@ Reference
 
 <a href="https://github.com/ReactiveCocoa/ReactiveCocoa">ReactiveCocoa</a>
 
+<a href="https://github.com/jonathantribouharet/JTMaterialTransition">JTMaterialTransition</a>
+
 <a href="https://github.com/TTTAttributedLabel/TTTAttributedLabel">TTTAttributedLabel</a>
 
 <a href="https://github.com/michaeltyson/TPKeyboardAvoiding">TPKeyboardAvoiding</a></br>
