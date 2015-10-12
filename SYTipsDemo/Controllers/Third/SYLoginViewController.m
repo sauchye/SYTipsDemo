@@ -68,12 +68,8 @@
     [_loginBtn addTarget:self action:@selector(loginBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_loginBtn];
     
-    [_loginBtn setTintColor:[UIColor grayColor]];
-    
     _loginBtn.layer.masksToBounds = YES;
     _loginBtn.layer.cornerRadius = 5.0;
-    _loginBtn.layer.borderColor = kNAVIGATION_BAR_COLOR.CGColor;
-    _loginBtn.layer.borderWidth = 1.0;
     
 #pragma mark - 核心代码
     [_userTextField mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -109,6 +105,7 @@
     
     ViewRadius(_userTextField, 5.0);
     ViewRadius(_pwdTextField, 5.0);
+    _userTextField.tintColor = _pwdTextField.tintColor = kNAVIGATION_BAR_COLOR;
 
     _userTextField.text = VString(@"sauchye");
     _userTextField.layer.borderColor = [UIColor clearColor].CGColor;
@@ -118,16 +115,16 @@
     [_loginBtn setBackgroundColor:kNAVIGATION_BAR_COLOR];
     [_loginBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
-    //placeholder color
-//    [_userTextField setValue:kNAVIGATION_BAR_COLOR forKeyPath:@"_placeholderLabel.textColor"];
-    
-    //RAC
-//    RAC(self.loginBtn, enabled) = [RACSignal combineLatest:@[self.userTextField.rac_textSignal, self.pwdTextField.rac_textSignal] reduce:^id(NSString *userName, NSString *password) {
-//        return @(userName.length > 0  && password.length >= 6 );
-//    }];
-    
-//    [_userTextField addTarget:self action:@selector(updateLoginButton) forControlEvents:UIControlEventEditingChanged];
-//    [_pwdTextField addTarget:self action:@selector(updateLoginButton) forControlEvents:UIControlEventEditingChanged];
+
+    RAC(self.loginBtn, enabled) = [RACSignal combineLatest:@[self.userTextField.rac_textSignal, self.pwdTextField.rac_textSignal] reduce:^id(NSString *userName, NSString *password) {
+        
+        if (userName.length > 0 && password.length >=6) {
+            _loginBtn.backgroundColor = kNAVIGATION_BAR_COLOR;
+        }else{
+            _loginBtn.backgroundColor = kBUTTON_DEFAULT_BACKGROUND_COLOR;
+        }
+        return @(userName.length > 0  && password.length >= 6 );
+    }];
 }
 
 

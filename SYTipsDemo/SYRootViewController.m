@@ -38,11 +38,12 @@
 
 - (void)customizeTabBarForController{
     
+// icon https://github.com/Coding/Coding-iOS
+    
     //tabbar 背景图片 tabbar_background
-    UIImage *backgroundImage = [UIImage imageNamed:@"tabbar_background"];
+    UIImage *backgroundImage ;//= [UIImage imageNamed:@"tabbar_background"];
     //选项卡图片
-    NSArray *tabBarItemImages;//这里添加图片
-    //= @[VString(@"First"), VString(@"Second"),VString(@"Third")];
+    NSArray *tabBarItemImages = @[VString(@"home"), VString(@"activity"), VString(@"me")];
     
     NSArray *tabBarItemTitles = @[VString(@"Home"), VString(@"Found"), VString(@"Me")];
     NSInteger index = 0;
@@ -59,11 +60,11 @@
         [item setTitle:[tabBarItemTitles objectAtIndex:index]];
         item.selectedTitleAttributes = @{
                                          NSFontAttributeName: [UIFont boldSystemFontOfSize:12],
-                                         NSForegroundColorAttributeName:kNAVIGATION_BAR_COLOR,
+                                         NSForegroundColorAttributeName:RGB(46, 52, 62),
                                          };
         item.unselectedTitleAttributes = @{
                                            NSFontAttributeName: [UIFont boldSystemFontOfSize:12],
-                                           NSForegroundColorAttributeName:RGB(217, 217, 217),
+                                           NSForegroundColorAttributeName:[UIColor grayColor],
                                            };
         
         [item setTitle:[tabBarItemTitles objectAtIndex:index]];
