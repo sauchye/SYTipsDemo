@@ -89,6 +89,7 @@ plist添加：
 	[hud hide:YES afterDelay:2.0]; 
 
 ```
+#### 最新地址：https://github.com/sauchye/SYHUDView
 
 - And has many not finished…Welcome to star, fork, pull request or issues.
 
